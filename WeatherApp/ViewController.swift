@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchTextField.delegate = self
     }
 
-    @IBAction func seardhPressed(_ sender: UIButton) {
+    @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
