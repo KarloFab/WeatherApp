@@ -23,14 +23,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        searchTextField.endEditing(true)
         weatherManager.fetchWeather(cityName: searchTextField.text!)
+        searchTextField.endEditing(true)
     }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.endEditing(true)
         weatherManager.fetchWeather(cityName: searchTextField.text!)
+        searchTextField.endEditing(true)
         return true
     }
     
