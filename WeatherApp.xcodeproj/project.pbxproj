@@ -17,6 +17,7 @@
 		02F1F9B62750358500022C24 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1F9B52750358500022C24 /* dark_background.pdf */; };
 		02F1F9B827503C3700022C24 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1F9B727503C3700022C24 /* WeatherManager.swift */; };
 		02F1F9BA27516A7C00022C24 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1F9B927516A7C00022C24 /* dark_background.pdf */; };
+		02F1F9BC27516D7500022C24 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1F9BB27516D7500022C24 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		02F1F9B52750358500022C24 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = dark_background.pdf; path = "../../Clima-iOS13-master/Clima/dark_background.pdf"; sourceTree = "<group>"; };
 		02F1F9B727503C3700022C24 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		02F1F9B927516A7C00022C24 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = dark_background.pdf; path = "../../Clima-iOS13-master/Clima/dark_background.pdf"; sourceTree = "<group>"; };
+		02F1F9BB27516D7500022C24 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				02F1F9B727503C3700022C24 /* WeatherManager.swift */,
+				02F1F9BB27516D7500022C24 /* WeatherData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F1F9A1274EEB3300022C24 /* ViewController.swift in Sources */,
+				02F1F9BC27516D7500022C24 /* WeatherData.swift in Sources */,
 				02F1F99D274EEB3300022C24 /* AppDelegate.swift in Sources */,
 				02F1F9B827503C3700022C24 /* WeatherManager.swift in Sources */,
 				02F1F99F274EEB3300022C24 /* SceneDelegate.swift in Sources */,
