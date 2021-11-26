@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -14,12 +15,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     
     var weatherManager = WeatherManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        
         weatherManager.delegate = self
         searchTextField.delegate = self
+    }
+}
+
+//MARK: - LocationManagerDelegate
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            weatherManager.fetchWeatherByCoordinates(latitude: lat, longitude: lon)
+        }
+    }
+    
+    //Must be added if above method is added - by the rules of documentation
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    
+    @IBAction func currentLocationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
     }
 }
 
@@ -60,6 +90,7 @@ extension ViewController: WeatherManagerDelagate {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = weather.cityName
         }
     }
     
